@@ -1,7 +1,7 @@
 #   --- Stage 1 build: Build Stage  ---
 
 FROM python:3.10-slim as Builder
-# set dir for app inside container
+# Set the working directory inside the container
 WORKDIR /usr/src/app
 # copy from to our courrent code source to working dir
 COPY requirements.txt .

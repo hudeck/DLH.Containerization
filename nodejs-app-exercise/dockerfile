@@ -1,0 +1,15 @@
+FROM node:latest
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+# copy from to our courrent code source to working dir
+COPY package.json .
+# install dependencies
+RUN npm install
+
+# Copy the application files into the container
+COPY . .
+
+EXPOSE 3000
+
+# Default command to start the app
+CMD ["npm", "start"]

@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-mysql-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js API connected to MySQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "dotenv": "^16.0.3"
+  }
+}
