@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+# set dir for app inside container
+WORKDIR /usr/src/app
+# copy from to our courrent code source to working dir
+COPY . .
+# install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 8000
+# command to run the app
+# with app folder in the main file the function app 
+# "127.0.0.1" "0.0.0.0" is the same
+CMD [ "uvicorn" , "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
