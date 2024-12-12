@@ -13,6 +13,6 @@ minikube status     //can show if all internal parts are up
  kubectl get services   // shows existing services with confirguration
 
 
- minikube service <servicename>     //starts up the app/service need to remain open in cmd
+ minikube service <servicename>     //creates a tunnel to reach the app/service locally 127.0.0.1. need to remain open in cmd
 
  kubctl scale deployment <service> --replicas=9     //force to change how many replicas are to be used for

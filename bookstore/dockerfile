@@ -1,6 +1,6 @@
 #   --- Stage 1 build: Build Stage  ---
 
-FROM python:3.10-slim as Builder
+FROM python:3.10-slim as builder
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 # copy from to our courrent code source to working dir
@@ -11,13 +11,13 @@ RUN pip install --user --no-cache-dir -r requirements.txt
 
 #   --- Stage 2: Runtime Stage  ---
 
-FROM python:3.10-slim as Runtime
+FROM python:3.10-slim as runtime
 
 WORKDIR /usr/src/app
 # Copy the application files into the container
 COPY . .
 # copy the dependenccies installed in the builder stage
-COPY --from=Builder /root/.local /root/.local
+COPY --from=builder /root/.local /root/.local
 # Copy the wait-for-it.sh script from the scripts folder
 COPY scripts/wait-for-it.sh /usr/src/app/
 # Ensure the script has executable permissions

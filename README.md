@@ -13,6 +13,9 @@ docker compose down     to stop the container bundle
 docker stop <container name>     to stop an active container
 docker start <container name>    to start an already previously started and now stopped container
 docker build -t <new image name> <src app path>
+docker (image) tag <source image><: optional tag if exists> <target imagename>:<new tag name like latest>
+                                this in order to push later to dockerhub
+docker (image) push <docker login>/<image including tag>
 docker rm <container name>      removes a non running container (not image)
 docker network create <new docker network name> create a new virtual network in docker engine
 docker network inspect <docker network name>    shows all params of the Network confirguration
